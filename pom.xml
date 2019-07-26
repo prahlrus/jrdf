@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.stinja</groupId>
+  <artifactId>jrdf</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1</version>
+  <name>jrdf</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+      <maven.compiler.release>11</maven.compiler.release>
+  </properties>
+
+  <build>
+      <pluginManagement>
+          <plugins>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-compiler-plugin</artifactId>
+                  <version>3.8.1</version>
+              </plugin>
+          </plugins>
+      </pluginManagement>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-text</artifactId>
+      <version>1.7</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>apache-jena-libs</artifactId>
+      <type>pom</type>
+      <version>3.9.0</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+      <repository>
+         <id>apache.releases</id>
+         <url>https://repository.apache.org/content/repositories/releases/</url>
+      </repository>
+   </repositories>
+
+</project>
