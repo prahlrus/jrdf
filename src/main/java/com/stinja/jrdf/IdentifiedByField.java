@@ -6,14 +6,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * This annotation is born by a class whose isntances should receive
- * URIs when persisted. Instances that lack this annotation will be
- * persisted as blank nodes.
+ * This annotation is born by a class whose URIs are determined by
+ * a single field, which must be convertible to an unisgned int.
  */
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Resource {
+public @interface IdentifiedByField {
 	/**
 	 * When this annotation is present, only the field matching the 
 	 * name of the idField is used as an identifier for the instance. 
@@ -21,7 +20,7 @@ public @interface Resource {
 	 * should be thrown.
 	 *
 	 * Any other @EnumeratedField, @LiteralProperty or 
-	 * @ResourceField fields have the Cardinality.IDENTIFIER will 
+	 * @IdentifiedByFieldField fields have the Cardinality.IDENTIFIER will 
 	 * be ignored, since it is not necessary to match against those 
 	 * fields when a URI is available.
 	 */
@@ -55,4 +54,11 @@ public @interface Resource {
 	 * @see uriPrefix()
 	 */
 	boolean abbreviated() default true;
+
+	/**
+	 * The generated URI of an @IdentifiedByField class has three parts:
+	 * a prefix, a label and the identifying number. If the label is not
+	 * specified, the name of the class is used by default.
+	 */
+	String uriLabel() default "";
 }

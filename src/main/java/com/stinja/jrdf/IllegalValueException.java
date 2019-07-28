@@ -33,7 +33,7 @@ public class IllegalValueException extends RuntimeException {
 		) {
 		return new IllegalValueException(
 			String.format(
-				"The field %s is the identifier of the @Resource %s and cannot be null.",
+				"The field %s is the identifier of the @IdentifiedByField %s and cannot be null.",
 				field.getName(),
 				clazz.getCanonicalName()
 			)
@@ -46,7 +46,7 @@ public class IllegalValueException extends RuntimeException {
 		) {
 		return new IllegalValueException(
 			String.format(
-				"The field %s is the identifier of the @Resource %s and cannot be null.",
+				"The field %s is the identifier of the @IdentifiedByField %s and cannot be null.",
 				fieldName,
 				clazz.getCanonicalName()
 			)

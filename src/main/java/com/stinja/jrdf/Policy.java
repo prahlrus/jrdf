@@ -1,13 +1,14 @@
 package com.stinja.jrdf;
 
 /**
- * An object representing the policy of a @LiteralValued or a
- * @ResourceValued field.
+ * An object representing the policy of a @PropertyField.
  * 
  * If the nullable is false, then an Exception will be thown when
  * trying to persist an object that has a "null" for of an empty
- * Collection for that field. If a non-nullable field cannot be
- * populated during retrieval, an Exception will be thrown.
+ * Collection for that field. 
+ * 
+ * If a non-nullable field of ANY Object in the graph being  
+ * retrieved cannot be populated, the retrieval will fail.
  *
  * If isCollection is true, then the type of the field must be 
  * a java.util.Collection. If isCollection is false, the type must
@@ -16,8 +17,8 @@ package com.stinja.jrdf;
  * The IDENTIFIER policy is semantically identical to the 
  * EXACTLY_ONE policy, but indicates that the property should
  * be used when identifying this Object with a query. This policy
- * is ignored if class is annotated as a @Resource, since that
- * annotation specifies an idField.
+ * is ignored if class is annotated as a @IdentifiedByField, 
+ * since that annotation specifies an idField.
  */
 
 public enum Policy {

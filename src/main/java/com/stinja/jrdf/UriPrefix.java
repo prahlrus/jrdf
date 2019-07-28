@@ -25,7 +25,7 @@ public @interface UriPrefix {
 	/**
 	 * The prefix used queries.
 	 */
-	String prefix();
+	String abbreviated();
 
 	/**
 	 * The full URI prefix.

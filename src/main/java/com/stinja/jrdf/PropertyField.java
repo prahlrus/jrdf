@@ -7,10 +7,8 @@ import java.lang.annotation.Target;
 
 /**
   * Any field of that is persisted using an RDF Property must bear
-  * this annotation. If the property cannot be converted to a 
-  * Literal value by Apache Jena, the field must also bear either
-  * the @EnumeratedField or the @ResourceField annotations, for 
-  * enumerate or reference types, respectively.
+  * this annotation. Fields that lack this annotation will be
+  * ignored by both retrieval and persistence operations.
   */
 
 @Target(ElementType.FIELD)
