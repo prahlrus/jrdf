@@ -27,7 +27,7 @@ public @interface IdentifiedByField {
 	String idField();
 
 	/**
-	 * If there is no @UriPrefix annotation on the class or its 
+	 * If there is no @ResourcePrefix annotation on the class or its 
 	 * containing packages, this must be the fully qualified prefix
 	 * that the URIs of instances are to bear. Thus, if a Foo object
 	 * is to receive a URI like:
@@ -36,7 +36,7 @@ public @interface IdentifiedByField {
 	 * 
 	 * Either the annotation 
 
-	 * @UriPrefix(
+	 * @ResourcePrefix(
 	 * 	prefix = "data:", 
 	 *	full = "http://www.stinja.com/jrdf/test_data#"
 	 * )

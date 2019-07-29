@@ -1,6 +1,7 @@
 package com.stinja.jrdf;
 
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
@@ -11,7 +12,7 @@ import java.lang.annotation.Target;
  * it is not used, all @FooProperty.property fields must bear the
  * full URI of the RDF property used to persist that field.
  *
- * If multiple @UriPrefix annotations are present for the same
+ * If multiple @ResourcePrefix annotations are present for the same
  * prefix, the most-specific one takes precedence. Thus, if both
  * the package and the class define the "schema:" prefix differently,
  * the class's definition will be used for all operations involving
@@ -21,7 +22,8 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.PACKAGE, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface UriPrefix {
+@Repeatable(ResourcePrefices.class)
+public @interface ResourcePrefix {
 	/**
 	 * The prefix used queries.
 	 */

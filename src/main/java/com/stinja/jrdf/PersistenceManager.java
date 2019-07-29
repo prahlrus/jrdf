@@ -82,7 +82,7 @@ public class PersistenceManager {
 	/* ############# INITIALIZATION ############# */
 
 	/**
-	 * Pre-process a class to find any and all @UriPrefix
+	 * Pre-process a class to find any and all @ResourcePrefix
 	 * annotations on it or on its package. All SPARQL queries
 	 * regarding that particular class will use those prefixes.
 	 */
@@ -95,15 +95,15 @@ public class PersistenceManager {
 			Map <String, String> draftPrefixes = 
 				new HashMap<String, String>();
 			Package currentPrefixes = clazz.getPackage();
-			if (currentPrefixes != null && currentPrefixes.isAnnotationPresent(UriPrefix.class)) {
-				for (UriPrefix up : (UriPrefix[]) currentPrefixes.getAnnotationsByType(UriPrefix.class)) {
+			if (currentPrefixes != null && currentPrefixes.isAnnotationPresent(ResourcePrefix.class)) {
+				for (ResourcePrefix up : (ResourcePrefix[]) currentPrefixes.getAnnotationsByType(ResourcePrefix.class)) {
 					draftPrefixes.put(up.abbreviated(), up.full());
 					if (up.abbreviated().equals(uriPrefix))
 						uriPrefix = up.full();
 				}
 			}
-			if (clazz.isAnnotationPresent(UriPrefix.class)) {
-				for (UriPrefix up : (UriPrefix[]) clazz.getAnnotationsByType(UriPrefix.class)) {
+			if (clazz.isAnnotationPresent(ResourcePrefix.class)) {
+				for (ResourcePrefix up : (ResourcePrefix[]) clazz.getAnnotationsByType(ResourcePrefix.class)) {
 					draftPrefixes.put(up.abbreviated(), up.full());
 					if (up.abbreviated().equals(uriPrefix))
 						uriPrefix = up.full();

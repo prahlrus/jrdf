@@ -21,7 +21,7 @@ public @interface PropertyField {
 	String rdfProperty();
 
 	/**
-	 * If there is no @UriPrefix annotation on the class or its 
+	 * If there is no @ResourcePrefix annotation on the class or its 
 	 * containing packages, this must be the fully qualified prefix
 	 * that the URIs of instances are to bear. Thus, if the RDF
 	 * property to be used has the URI:
@@ -30,7 +30,7 @@ public @interface PropertyField {
 	 * 
 	 * Either the annotation 
 
-	 * @UriPrefix(
+	 * @ResourcePrefix(
 	 * 	prefix = "schema:", 
 	 *	full = "http://www.stinja.com/jrdf/schema#"
 	 * )
